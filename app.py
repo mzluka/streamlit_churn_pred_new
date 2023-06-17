@@ -30,7 +30,7 @@ def set_png_as_page_bg(png_file):
 set_png_as_page_bg('6.JPG')
 
 
-classifier_name=['XGBoost', 'Гадание на кофейной гуще']
+classifier_name=['LightGMB', 'RandomForest', 'LogisticRegression']
 option = st.sidebar.selectbox('Евгений Викторович, какой алгоритм запустить?', classifier_name)
 st.subheader(option)
 
@@ -51,13 +51,13 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
 
     else:
         pred=0.30
-        #st.markdown('Наверное, клиент останется в банке, но это не точно да и вообще надо звонить в Битву экстрасенсов.')
+        #st.markdown('Возможно, клиент останется в банке, необходим дополнительный анализ')
 
     return float(pred)
 
 
 def main():
-    st.title("Прогноз оттока клиентов")
+    st.title("Прогноз оттока клиентов клиентов из банка")
     html_temp = """
     <div style="background-color:white ;padding:10px">
     <h2 style="color:red;text-align:center;">Заполни форму</h2>
@@ -69,31 +69,31 @@ def main():
 
 
 
-    st.sidebar.subheader("Приложение создано для курса Diving into Darkness of Data Science")
-    st.sidebar.text("Разработчик - Братковский Е.В.")
+    st.sidebar.subheader("Приложение создано в рамках проекта IT-Academy по направлению Data Science)
+    st.sidebar.text("Разработано Слука М.З., ЦБУ 602 г. Лида")
 
 
-    CreditScore = st.slider('Скоринговый балл', 300, 900)
+    CreditScore = st.slider('Удовлетворенность качеством обслуживания, %', 0, 100)
 
-    Geography = st.selectbox('География/регион', ['France', 'Germany', 'Spain'])
+    Geography = st.selectbox('Регион', ['France', 'Germany', 'Spain'])
     Geo = int(le1_pik.transform([Geography]))
 
-    Gender = st.selectbox('Пол', ['Male', 'Female'])
+    Gender = st.selectbox('Организационно-правовая форма', ['Male', 'Female'])
     Gen = int(le_pik.transform([Gender]))
 
-    Age = st.slider("Возраст", 10, 95)
+    Age = st.slider("Размер уставного фонда, BYN", 0, 10000)
 
-    Tenure = st.selectbox("Стаж", ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','10', '11', '12', '13', '14', '15'])
+    Tenure = st.selectbox("Продолжительность обслуживания в банке, лет", ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','10', '11', '12', '13', '14', '15'])
 
-    Balance = st.slider("Баланс", 0.00, 250000.00)
+    Balance = st.slider("Среднедневные остатки на расчётных счета, BYN", 0.00, 250000.00)
 
-    NumOfProducts = st.selectbox('Количество продуктов', ['1', '2', '3', '4'])
+    NumOfProducts = st.selectbox('Количество банковских продуктов', ['1', '2', '3', '4'])
 
-    HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
+    HasCrCard = st.selectbox("Наличие кредитного договора", ['0', '1'])
 
-    IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
+    IsActiveMember = st.selectbox("Наличие валютных счетов", ['0', '1'])
 
-    EstimatedSalary = st.slider("Зарплата", 0.00, 200000.00)
+    EstimatedSalary = st.slider("Размер ежемесячных перечислений на карт-счет в качестве заработной платы, BYN", 0.00, 200000.00)
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
