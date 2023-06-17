@@ -57,7 +57,7 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
 
 
 def main():
-    st.title("Прогноз оттока клиентов клиентов из банка")
+    st.title("Прогноз оттока клиентов (юрлиц, ИП) из банка")
     html_temp = """
     <div style="background-color:white ;padding:10px">
     <h2 style="color:red;text-align:center;">Введите данные по клиенту:</h2>
@@ -94,7 +94,7 @@ def main():
 
     IsActiveMember = st.selectbox("Наличие валютных счетов", ['0', '1'])
 
-    EstimatedSalary = st.slider("Размер ежемесячных перечислений на карт-счет в качестве заработной платы, BYN", 0.00, 200000.00)
+    EstimatedSalary = st.slider("Размер ежемесячных перечислений на карт-счета физлиц заработной платы, BYN", 0.00, 200000.00)
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
