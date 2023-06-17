@@ -83,6 +83,8 @@ def main():
     unsafe_allow_html=True,
 )
 
+    st.text_input('Single Big Char', value='A', max_chars=1, font_size=40)
+    
     CreditScore = st.slider('Удовлетворенность качеством обслуживания, %', 0, 100)
 
     Geography = st.selectbox('Регион', ['France', 'Germany', 'Spain'])
@@ -107,12 +109,12 @@ def main():
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
-               <h2 style="color:red;text-align:center;">К сожалению, мы теряем клиента.</h2>
+               <h2 style="color:red;text-align:center;">К сожалению, мы теряем клиента...</h2>
                </div>
             """
     no_churn_html = """  
               <div style="background-color:#94be8d;padding:20px >
-               <h2 style="color:green ;text-align:center;"> Успех, клиент остаётся в банке.</h2>
+               <h2 style="color:green ;text-align:center;"> Успех, клиент остаётся в банке!</h2>
                </div>
             """
 
