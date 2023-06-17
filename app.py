@@ -31,7 +31,7 @@ set_png_as_page_bg('6.jpg')
 
 
 classifier_name=['LightGMB', 'RandomForest', 'LogisticRegression']
-option = st.sidebar.selectbox('Выбрать алгоритм прогнозирования', classifier_name)
+option = st.sidebar.selectbox('Выбрать алгоритм для прогнозирования', classifier_name)
 st.subheader(option)
 
 
