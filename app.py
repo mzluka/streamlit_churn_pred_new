@@ -31,7 +31,7 @@ set_png_as_page_bg('6.JPG')
 
 
 classifier_name=['LightGMB', 'RandomForest', 'LogisticRegression']
-option = st.sidebar.selectbox('Евгений Викторович, какой алгоритм запустить?', classifier_name)
+option = st.sidebar.selectbox('Выбрать алгоритм прогнозирования', classifier_name)
 st.subheader(option)
 
 
@@ -60,7 +60,7 @@ def main():
     st.title("Прогноз оттока клиентов клиентов из банка")
     html_temp = """
     <div style="background-color:white ;padding:10px">
-    <h2 style="color:red;text-align:center;">Заполни форму</h2>
+    <h2 style="color:red;text-align:center;">Введите данные по клиенту:</h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
@@ -69,7 +69,7 @@ def main():
 
 
 
-    st.sidebar.subheader("Приложение создано в рамках проекта IT-Academy по направлению Data Science)
+    st.sidebar.subheader("Приложение создано в рамках проекта IT-Academy по направлению Data Science")
     st.sidebar.text("Разработано Слука М.З., ЦБУ 602 г. Лида")
 
 
@@ -97,20 +97,19 @@ def main():
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
-               <h2 style="color:red;text-align:center;"> Жаль, но теряем клиента.</h2>
+               <h2 style="color:red;text-align:center;">К сожалению, мы теряем клиента.</h2>
                </div>
             """
     no_churn_html = """  
               <div style="background-color:#94be8d;padding:20px >
-               <h2 style="color:green ;text-align:center;"> Ура, клиент остаётся в банке !!!</h2>
+               <h2 style="color:green ;text-align:center;"> Успех, клиент остаётся в банке.</h2>
                </div>
             """
 
     if st.button('Сделать прогноз'):
         output = predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-        st.success('Вероятность оттока составляет {}'.format(output))
-        st.balloons()
-
+        st.success('Вероятность ухода клиента составляет {}'.format(output))
+       
         if output >= 0.5:
             st.markdown(churn_html, unsafe_allow_html= True)
 
