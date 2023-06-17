@@ -27,7 +27,7 @@ def set_png_as_page_bg(png_file):
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
-set_png_as_page_bg('5.jpg')
+set_png_as_page_bg('6.jpg')
 
 
 classifier_name=['LightGMB', 'RandomForest', 'LogisticRegression']
@@ -59,7 +59,7 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
 def main():
     st.title("Прогноз оттока клиентов (юрлиц, ИП) из банка")
     html_temp = """
-    <div style="background-color:white ;padding:30px">
+    <div style="background-color:white ;padding:10px">
     <h2 style="color:red;text-align:center;">Введите данные по клиенту:</h2>
     </div>
     """
