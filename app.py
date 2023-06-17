@@ -59,7 +59,7 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
 def main():
     st.title("Прогноз оттока клиентов (юрлиц, ИП) из банка")
     html_temp = """
-    <div style="background-color:white ;padding:10px">
+    <div style="background-color:white ;padding:30px">
     <h2 style="color:red;text-align:center;">Введите данные по клиенту:</h2>
     </div>
     """
@@ -86,7 +86,7 @@ def main():
 
     Tenure = st.selectbox("Продолжительность обслуживания в банке, лет", ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','10', '11', '12', '13', '14', '15'])
 
-    Balance = st.slider("Среднедневные остатки на расчётных счета, BYN", 0.00, 250000.00)
+    Balance = st.slider("Среднедневные остатки на расчётных счетах, BYN", 0.00, 250000.00)
 
     NumOfProducts = st.selectbox('Количество банковских продуктов', ['1', '2', '3', '4'])
 
