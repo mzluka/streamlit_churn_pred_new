@@ -60,7 +60,7 @@ def main():
     st.title("Прогноз оттока клиентов (юрлиц, ИП) из банка")
     html_temp = """
     <div style="background-color:white ;padding:10px">
-    <h2 style="color:red;text-align:center;">Введите данные по клиенту:</h2>
+    <h2 style="color:green;text-align:center;">Введите данные по клиенту:</h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
