@@ -27,7 +27,7 @@ def set_png_as_page_bg(png_file):
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
-set_png_as_page_bg('6.jpg')
+set_png_as_page_bg('7.jpg')
 
 
 classifier_name=['LightGMB', 'RandomForest', 'LogisticRegression']
@@ -60,7 +60,7 @@ def main():
     st.title("Прогноз оттока клиентов (юрлиц, ИП) из банка")
     html_temp = """
     <div style="background-color:white ;padding:10px">
-    <h2 style="color:green;text-align:center;">Введите данные по клиенту:</h2>
+    <h2 style="color:red;text-align:center;">Введите данные по клиенту:</h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
@@ -82,8 +82,6 @@ def main():
 """,
     unsafe_allow_html=True,
 )
-
-    st.text_input('Single Big Char', value='A', max_chars=1, font_size=40)
     
     CreditScore = st.slider('Удовлетворенность качеством обслуживания, %', 0, 100)
 
