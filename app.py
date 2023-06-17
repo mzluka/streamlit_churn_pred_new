@@ -68,19 +68,20 @@ def main():
 
 
 
-
     st.sidebar.subheader("Приложение создано в рамках проекта IT-Academy по направлению Data Science")
     st.sidebar.image('4.jpg')
     st.sidebar.text("Разработано Слука М.З., ЦБУ 602 г. Лида")
-    <style>
-    .sidebar .sidebar-content {
-        background-image: linear-gradient(#8993ab,#8993ab);
-        color: black;
-    }
-    </style>
-    """,
-        unsafe_allow_html=True,
-    )
+    st.markdown(
+    """
+<style>
+.sidebar .sidebar-content {
+    background-image: linear-gradient(#8993ab,#8993ab);
+    color: black;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
 
     CreditScore = st.slider('Удовлетворенность качеством обслуживания, %', 0, 100)
 
