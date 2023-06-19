@@ -82,8 +82,8 @@ def main():
     Geography = st.selectbox('Регион', ['France', 'Germany', 'Spain'])
     Geo = int(le1_pik.transform([Geography]))
 
-    Gender = st.selectbox('Организационно-правовая форма', ['Male', 'Female'])
-    Gen = int(le_pik.transform([Gender]))
+    #Gender = st.selectbox('Организационно-правовая форма', ['Male', 'Female'])
+    #Gen = int(le_pik.transform([Gender]))
 
     Age = st.slider("Размер уставного фонда, BYN", 0, 10000)
 
