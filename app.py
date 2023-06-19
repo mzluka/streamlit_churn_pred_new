@@ -85,7 +85,7 @@ def main():
     #Gender = st.selectbox('Организационно-правовая форма', ['Male', 'Female'])
     #Gen = int(le_pik.transform([Gender]))
 
-    Age = st.number_input("Размер уставного фонда, BYN", min_value=37, max_value=10, format="%d")
+    Age = st.number_input("Размер уставного фонда, BYN", min_value=37, max_value=1000000, format="%d")
 
     Tenure = st.number_input("Срок обслуживания в банке, лет", min_value=1, max_value=10, format="%d")
 
