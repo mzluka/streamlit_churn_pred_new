@@ -93,7 +93,7 @@ def main():
 
     Age = st.slider("Размер уставного фонда, BYN", 0, 10000)
 
-    Tenure = st.number_input("Продолжительность обслуживания в банке, лет", min_value=1, max_value=10, format="%d")
+    Tenure = st.number_input("Срок обслуживания в банке, лет", min_value=1, max_value=10, format="%d")
 
     Balance = st.number_input("Среднедневные остатки на расчётных счетах, BYN", max_value=250000.00, format="%4.2f")
 
