@@ -58,7 +58,6 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
 
 def main():
     st.title("Прогноз оттока юридических лиц/ИП из банка")
-    st.markdown(html_temp, unsafe_allow_html=True)
 
 
 
