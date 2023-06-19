@@ -93,9 +93,9 @@ def main():
 
     Age = st.slider("Размер уставного фонда, BYN", 0, 10000)
 
-    Tenure = st.selectbox("Продолжительность обслуживания в банке, лет", ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','10', '11', '12', '13', '14', '15'])
+    Tenure = st.number_input("Продолжительность обслуживания в банке, лет", max_value=25, format="%d")
 
-    Balance = st.slider("Среднедневные остатки на расчётных счетах, BYN", 0.00, 250000.00)
+    Balance = st.number_input("Среднедневные остатки на расчётных счетах, BYN", max_value=250000.00, format="%4.2f")
 
     NumOfProducts = st.selectbox('Количество банковских продуктов', ['1', '2', '3', '4'])
 
@@ -103,7 +103,7 @@ def main():
 
     IsActiveMember = st.selectbox("Наличие валютных счетов", ['0', '1'])
 
-    EstimatedSalary = st.slider("Размер ежемесячных перечислений на карт-счета физлиц заработной платы, BYN", 0.00, 200000.00)
+    EstimatedSalary = st.number_input("Размер ежемесячных перечислений на карт-счета физлиц заработной платы, BYN", max_value=250000.00, format="%4.2f")
 
     churn_html = """  
               <div style="background-color:#f44336;padding:20px >
