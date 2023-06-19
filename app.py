@@ -79,8 +79,8 @@ def main():
     
     CreditScore = st.slider('Удовлетворенность качеством обслуживания, %', 0, 100)
 
-    Geography = st.selectbox('Регион', ['France', 'Germany', 'Spain'])
-    Geo = int(le1_pik.transform([Geography]))
+    #Geography = st.selectbox('Регион', ['France', 'Germany', 'Spain'])
+    #Geo = int(le1_pik.transform([Geography]))
 
     #Gender = st.selectbox('Организационно-правовая форма', ['Male', 'Female'])
     #Gen = int(le_pik.transform([Gender]))
